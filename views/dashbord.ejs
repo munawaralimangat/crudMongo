@@ -1,0 +1,39 @@
+<%- include('include/layout.ejs'); %>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2>Hello <%=user.name %>
+            </h2> <!-- Added heading -->
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td><a href="/edit" class="btn btn-primary">Edit</a></td> <!-- Link to the edit page -->
+                        <td><a href="/dashbord" class="btn delete-button btn-danger" data-id="<%=user._id %>">Delete</a></td>
+                         <!-- Link to the delete action -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <a href="/logout">
+            <button type="button" class="btn btn-primary btn-lg btn-block login-button">Logout</button>
+        </a>
+    </div>
+    <%- include('footer.ejs'); %>
